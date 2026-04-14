@@ -55,33 +55,20 @@ git clone git@github.com:hanbonghun/interview-skill.git
 git clone https://github.com/hanbonghun/interview-skill.git
 ```
 
-### 2. 스킬 경로 등록
+### 2. 스킬 파일 복사
 
-`~/.claude/settings.json` 파일을 열어 `skills.paths` 에 클론한 디렉토리 안의 `skills` 폴더 경로를 추가합니다.
+`skills/interview.md` 를 Claude Code의 로컬 스킬 디렉토리(`~/.claude/skills/`)에 복사합니다:
 
-**파일이 없는 경우** — 새로 생성합니다:
-```json
-{
-  "skills": {
-    "paths": ["/Users/yourname/interview-skill/skills"]
-  }
-}
+```bash
+cp /path/to/interview-skill/skills/interview.md ~/.claude/skills/interview.md
 ```
 
-**이미 `settings.json` 이 있는 경우** — `skills.paths` 배열에 경로를 추가합니다:
-```json
-{
-  "skills": {
-    "paths": [
-      "/Users/yourname/other-skill/skills",
-      "/Users/yourname/interview-skill/skills"
-    ]
-  }
-}
-```
+`/path/to/interview-skill` 은 실제 클론한 경로로 바꿔주세요. 확인하려면:
 
-> `/Users/yourname/interview-skill` 부분을 실제 클론한 경로로 변경하세요.
-> 확인 방법: 클론한 디렉토리 안에서 `pwd` 실행
+```bash
+# 클론한 디렉토리 안에서
+pwd
+```
 
 ### 3. Claude Code 재시작
 
@@ -285,8 +272,13 @@ Claude Code 대화를 새로 시작하고 `/interview` 를 다시 실행하면 �
 
 ## 삭제
 
-1. `~/.claude/settings.json` 에서 등록한 경로를 제거합니다.
-2. 클론한 `interview-skill` 디렉토리를 삭제합니다.
+1. 복사한 스킬 파일을 제거합니다:
+
+```bash
+rm ~/.claude/skills/interview.md
+```
+
+2. 클론한 `interview-skill` 디렉토리를 삭제합니다:
 
 ```bash
 rm -rf /path/to/interview-skill
