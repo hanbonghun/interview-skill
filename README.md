@@ -55,12 +55,12 @@ git clone git@github.com:hanbonghun/interview-skill.git
 git clone https://github.com/hanbonghun/interview-skill.git
 ```
 
-### 2. 스킬 파일 복사
+### 2. 스킬 디렉토리 복사
 
-`skills/interview.md` 를 Claude Code의 로컬 스킬 디렉토리(`~/.claude/skills/`)에 복사합니다:
+`skills/interview/` 디렉토리를 Claude Code의 로컬 스킬 디렉토리(`~/.claude/skills/`)에 복사합니다:
 
 ```bash
-cp /path/to/interview-skill/skills/interview.md ~/.claude/skills/interview.md
+cp -r /path/to/interview-skill/skills/interview ~/.claude/skills/interview
 ```
 
 `/path/to/interview-skill` 은 실제 클론한 경로로 바꿔주세요. 확인하려면:
@@ -272,10 +272,10 @@ Claude Code 대화를 새로 시작하고 `/interview` 를 다시 실행하면 �
 
 ## 삭제
 
-1. 복사한 스킬 파일을 제거합니다:
+1. 복사한 스킬 디렉토리를 제거합니다:
 
 ```bash
-rm ~/.claude/skills/interview.md
+rm -rf ~/.claude/skills/interview
 ```
 
 2. 클론한 `interview-skill` 디렉토리를 삭제합니다:
